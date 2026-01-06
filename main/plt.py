@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import math
-
+import os
 
 def draw_planar_graph( ) :
     """
@@ -128,7 +128,8 @@ def unify_regions_CCW( graph ) :
 
 
 def export_planar_graph( graph , filename ) :
-    with open( filename , 'w' ) as f :
+    filePath = os.path.join( "graphs" , filename )
+    with open( filePath , 'w' ) as f :
         for region in graph :
             parts = []
             for x , y in region :
@@ -137,8 +138,9 @@ def export_planar_graph( graph , filename ) :
 
 
 def import_planar_graph( filename ) :
+    filePath = os.path.join( "graphs" , filename )
     graph = []
-    with open( filename , 'r' ) as f :
+    with open( filePath , 'r' ) as f :
         for line in f :
             clean_line = line.strip( )
             if not clean_line :
