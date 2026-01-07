@@ -194,8 +194,8 @@ if __name__ == "__main__" :
     print( "Pol = ", all_regions)
     print()
     v , e = convert_regions_to_graph( all_regions )
-    print( "P = ", v )
-    print( "E = ", e )
+    print(  v )
+    print(  e )
     """
     filename = "graf5"
     export_planar_graph( unify_regions_CCW( all_regions ) , filename )
